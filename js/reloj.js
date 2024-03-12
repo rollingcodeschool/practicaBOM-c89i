@@ -39,5 +39,14 @@ function obtenerFecha (){
     horaActual.innerHTML=`${horaModificada}:${minutosModificada}:${segundosModificada}`
 }
 
+function cambiarColor(color){
+    const card = document.querySelector('.card')
+    card.classList.remove('border-primary','border-secondary','border-success');
+    card.classList.add(color)
+}
 
-setInterval(obtenerFecha, 1000)
+setInterval(obtenerFecha, 1000);
+
+const btnSuccess = document.querySelector('.btn-success')
+
+btnSuccess.addEventListener('click', ()=> cambiarColor('border-success'))
