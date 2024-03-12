@@ -31,7 +31,12 @@ function obtenerFecha (){
     
     fecha.innerHTML = `${diasDeLaSemana[fechaActual.getDay()]} ${fechaActual.getDate()} de ${mesesDelAnio[fechaActual.getMonth()]} del ${fechaActual.getFullYear()}`
     
-    horaActual.innerHTML=`${fechaActual.getHours()}:${fechaActual.getMinutes()}:${fechaActual.getSeconds()}`
+    //corregir los numeros de un digito
+    const segundosModificada = fechaActual.getSeconds().toString().padStart(2, '0')
+    const minutosModificada = fechaActual.getMinutes().toString().padStart(2, '0')
+    const horaModificada = fechaActual.getHours().toString().padStart(2, '0')
+
+    horaActual.innerHTML=`${horaModificada}:${minutosModificada}:${segundosModificada}`
 }
 
 
